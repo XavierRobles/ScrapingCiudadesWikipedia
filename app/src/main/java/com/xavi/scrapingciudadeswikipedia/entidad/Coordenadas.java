@@ -1,41 +1,52 @@
 package com.xavi.scrapingciudadeswikipedia.entidad;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.xavi.scrapingciudadeswikipedia.MapsActivity;
 
 import org.jsoup.nodes.Element;
 
 public class Coordenadas {
-    public com.xavi.scrapingciudadeswikipedia.MapsActivity MapsActivity;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
+    private String nombre;
 
-    public Coordenadas(String latitud, String longitude) {
+    public Coordenadas() {
+        super();
     }
 
-    public Coordenadas(Element elemento_imagen, Element longitude) {
+
+    public Coordenadas(double latitude, double longitude, String nombre) {
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.nombre = nombre;
     }
 
-    public String getLatitude() {
+    public double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(String latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
-    public String getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(String longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     @Override
     public String toString() {
-        return "Corodenadas{" +
-                "latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                '}';
+        return nombre;
     }
 }
